@@ -5,7 +5,7 @@ public class FiksniBroj extends TelefonskiBroj{
     private String broj;
     @Override
     public String ispisi() {
-        return null;
+        return grad+"/"+broj;
     }
 
     @Override
