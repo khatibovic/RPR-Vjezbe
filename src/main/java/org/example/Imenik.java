@@ -22,4 +22,15 @@ public class Imenik {
         return "U imeniku ne postoji osoba sa tim imenom!";
     }
 
+    public String naSlovo(char s) {
+        StringBuilder ispis = new StringBuilder();
+        int i = 1;
+        for (Map.Entry<String, TelefonskiBroj> entry : imenik.entrySet()) {
+            String ime = entry.getKey();
+            if (ime.charAt(0) == 's') {
+                ispis.append(i).append(".").append(ime).append(" - ").append(entry.getValue().ispisi()).append("\n");
+            }
+        }
+    }
+
 }
