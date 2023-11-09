@@ -21,5 +21,14 @@ public class MockitoTest {
 
         assertEquals("vrijednost", rezultat);
     }
+
+    @Test
+    void testMetodeIzvedeneKlase() {
+        IzvedenaKlasa mockIzvedenaKlasa = Mockito.mock(IzvedenaKlasa.class);
+        when(mockIzvedenaKlasa.metodaIzvedeneKlase()).thenReturn("Mock implementacija");
+        BaznaKlasa baznaKlasa = new BaznaKlasa(mockIzvedenaKlasa);
+        String rezultat = baznaKlasa.pozoviMetoduIzvedeneKlase();
+        assertEquals("Mock implementacija", rezultat);
+    }
 }
 
