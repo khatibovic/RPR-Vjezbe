@@ -7,12 +7,12 @@ public class Imenik {
     public void dodaj(String ime, TelefonskiBroj broj) {
         imenik.put(ime, broj);
     }
-    public String dajBroj(String ime) {
+    public String dajBroj(String ime) throws OsobaNePostojiException {
         TelefonskiBroj broj = imenik.get(ime);
         if(broj != null) {
             return broj.ispisi();
         }
-        return "Osoba sa tim imenom ne postoji u imeniku";
+        else throw new OsobaNePostojiException("Osoba sa tim imenom ne postoji u imeniku");
     }
     public String dajIme(TelefonskiBroj broj) {
         for (Map.Entry<String, TelefonskiBroj> entry : imenik.entrySet()) {
