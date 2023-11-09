@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Imenik {
     private HashMap<String, TelefonskiBroj> imenik = new HashMap<>();
@@ -51,6 +48,23 @@ public class Imenik {
                 }
             }
         }
+        return osobe;
+    }
+
+    public Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
+        Set<TelefonskiBroj> brojevi = new TreeSet<>(Comparator.comparing(TelefonskiBroj::ispisi));
+
+        for (Map.Entry<String, TelefonskiBroj> entry : imenik.entrySet()) {
+            TelefonskiBroj broj  = entry.getValue();
+            if (broj instanceof FiksniBroj) {
+                FiksniBroj fiksni = (FiksniBroj) broj;
+                if(fiksni.getGrad() == g) {
+                    brojevi.add(broj);
+                }
+            }
+
+        }
+        return brojevi;
     }
 
 }
