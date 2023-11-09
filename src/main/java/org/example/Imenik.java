@@ -14,11 +14,11 @@ public class Imenik {
         }
         else throw new OsobaNePostojiException("Osoba sa tim imenom ne postoji u imeniku");
     }
-    public String dajIme(TelefonskiBroj broj) {
+    public String dajIme(TelefonskiBroj broj) throws OsobaNePostojiException {
         for (Map.Entry<String, TelefonskiBroj> entry : imenik.entrySet()) {
-            if (entry.getValue().equals(broj)) return entry.getKey();
+            if (entry.getValue().ispisi().equals(broj.ispisi())) return entry.getKey();
         }
-        return "U imeniku ne postoji osoba sa tim imenom!";
+        throw new OsobaNePostojiException("Osoba sa tim imenom ne postoji u imeniku");
     }
 
     public String naSlovo(char s) {
