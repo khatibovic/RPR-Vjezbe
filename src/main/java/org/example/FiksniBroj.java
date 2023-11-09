@@ -17,4 +17,12 @@ public class FiksniBroj extends TelefonskiBroj{
         this.grad = grad;
         this.broj = broj;
     }
+
+    public Grad getGrad() {
+        return grad;
+    }
+
+    public String getBroj() {
+        return broj;
+    }
 }
