@@ -53,4 +53,3 @@ public class LaptopDaoSerializableFile implements LaptopDao{
         return lista;
     }
     }
-}
