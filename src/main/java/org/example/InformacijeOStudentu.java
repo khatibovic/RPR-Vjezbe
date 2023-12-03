@@ -25,4 +25,9 @@ public class InformacijeOStudentu extends LicneInformacije{
     public void setBrojIndexa(String brojIndexa) {
         this.brojIndexa = brojIndexa;
     }
+
+    @Override
+    public String predstavi() {
+        return super.predstavi() + ", " + godinaStudija + ", " + brojIndexa;
+    }
 }

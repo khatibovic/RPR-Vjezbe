@@ -1,6 +1,6 @@
 package org.example;
 
-public class LicneInformacije {
+public class LicneInformacije implements Predstavljanje {
     private String ime;
     private String prezime;
 
@@ -23,5 +23,10 @@ public class LicneInformacije {
 
     public void setPrezime(String prezime) {
         this.prezime = prezime;
+    }
+
+    @Override
+    public String predstavi() {
+        return ime + " " + prezime;
     }
 }

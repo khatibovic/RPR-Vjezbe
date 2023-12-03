@@ -15,4 +15,9 @@ public class InformacijeONastavniku extends LicneInformacije{
     public void setTitula(String titula) {
         this.titula = titula ;
     }
+
+    @Override
+    public String predstavi() {
+        return super.predstavi() + ", " + titula;
+    }
 }
