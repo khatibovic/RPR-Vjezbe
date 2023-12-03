@@ -13,6 +13,6 @@ public class InformacijeONastavniku extends LicneInformacije{
     }
 
     public void setTitula(String titula) {
-        this.titula = titula;
+        this.titula = titula ;
     }
 }
